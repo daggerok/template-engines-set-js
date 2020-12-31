@@ -1,4 +1,73 @@
+### IntelliJ IDEA ###
+.idea
+!.idea/
+.idea/*
+#!.idea/codeStyles/
+!.idea/runConfigurations/
+#!.idea/sqldialects.xml
+#*/.idea
+#!*/.idea/
+#*/.idea/*
+#!*/.idea/runConfigurations/
+#!*/.idea/codeStyles/
+#!*/.idea/sqldialects.xml
+#**/.idea
+#!**/.idea/
+#**/.idea/*
+#!**/.idea/runConfigurations/
+#!**/.idea/codeStyles/
+#!**/.idea/sqldialects.xml
+*.iws
+*.iml
+*.ipr
+*.log*
+restcli.*
+.gradle/
 target/
+build/
+/out/
+**/out/**
+
+### Node JS ###
+mochawesome-report/
+node_modules/
+.cache/
+dist/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code, VS ###
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.vcxproj*
+*.user
+*.sw?
+.vs/
+x64/
+
+### OS
+.DS_Store
+Thumbs.db
+
+### Maven
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
@@ -6,6 +75,3 @@ pom.xml.next
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
-.mvn/timing.properties
-# https://github.com/takari/maven-wrapper#usage-without-binary-jar
-.mvn/wrapper/maven-wrapper.jar

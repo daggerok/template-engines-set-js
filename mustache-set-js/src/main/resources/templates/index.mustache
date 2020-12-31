@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Index page</title>
+  <style>
+    ul {
+      list-style-type: none;
+    }
+  </style>
+</head>
+<body>
+<ul>
+  {{#username}}
+  <li>
+    data from thymeleaf template html code: <code id="from-html-code">{{username}}</code>
+  </li>
+  {{/username}}
+  <li>
+    data from localStorage and js code using thymeleaf template: <code id="from-local-storage-and-js-code">not yet...</code>
+  </li>
+</ul>
+<form action="/submit-form" method="post">
+  <label for="username">Username</label>
+  <input type="text" name="username" id="username" />
+</form>
+<script type="application/javascript">
+  document.addEventListener('DOMContentLoaded', function onDomContentLoaded(event) {
+    console.log('js-code: occurred', event);
+
+    var data = '{{username}}' || 'you should not see it anyway if mustache engine has been passed username as model value...';
+    console.log('try setup data from thymeleaf:', data);
+
+    setTimeout(function onFirstInterval() {
+      localStorage.setItem('from-local-storage', data);
+      console.log('localStorage setItem from js code block completed with data:', data);
+    }, 1234);
+
+    setTimeout(function onSecondInterval() {
+      var value = localStorage.getItem('from-local-storage');
+      document.querySelector('#from-local-storage-and-js-code').textContent = value;
+      console.log('localStorage getItem from js code block completed with value:', value);
+    }, 2345);
+
+    console.log('js-code block completed.');
+  }, false);
+</script>
+</body>
+</html>
